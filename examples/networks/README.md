@@ -59,4 +59,4 @@ This exercise demystifies the Transformer model, focusing on its core components
 
 > The Feed-Forward Network processes each position's features, adjusting dimensions and applying non-linear transformations.
 
-Code: [transformer_model.py](./transformer_model.py)
+Code: [transformer.py](./transformer.py)

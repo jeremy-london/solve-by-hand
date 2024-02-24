@@ -127,13 +127,13 @@ In the context of the code and the backpropagation process, the letter "d" in th
 
  1. 𝗙𝗼𝗿𝘄𝗮𝗿𝗱 𝗣𝗮𝘀𝘀: Given a multi layer perceptron (3 levels), an input vector X, predictions `Y^{Pred} = [0.5, 0.5, 0]`, and ground truth label `Y^{Target} = [0, 1, 0]`.
  2. 𝗕𝗮𝗰𝗸𝗽𝗿𝗼𝗽𝗮𝗴𝗮𝘁𝗶𝗼𝗻: Insert cells to hold our calculations.
- 3. 𝗟𝗮𝘆𝗲𝗿 𝟯 - 𝗦𝗼𝗳𝘁𝗺𝗮𝘅 (blue): Calculate `∂L / ∂z3` directly using the simple equation: `Y^{Pred} - Y^{Target} = [0.5, -0.5, 0]`. This simple equation is the benefit of using Softmax and Cross Entropy Loss together.
+ 3. 𝗟𝗮𝘆𝗲𝗿 𝟯 - 𝗦𝗼𝗳𝘁𝗺𝗮𝘅: Calculate `∂L / ∂z3` directly using the simple equation: `Y^{Pred} - Y^{Target} = [0.5, -0.5, 0]`. This simple equation is the benefit of using Softmax and Cross Entropy Loss together.
  4. 𝗟𝗮𝘆𝗲𝗿 𝟯 - 𝗪𝗲𝗶𝗴𝗵𝘁𝘀 & 𝗕𝗶𝗮𝘀𝗲𝘀: Calculate `∂L / ∂W3` and `∂L / ∂b3` by multiplying `∂L / ∂z3` and `[ a2 | 1 ]`.
  5. 𝗟𝗮𝘆𝗲𝗿 𝟮 - 𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗶𝗼𝗻𝘀: Calculate `∂L / ∂a2` by multiplying `∂L / ∂z3` and `W3`.
  6. 𝗟𝗮𝘆𝗲𝗿 𝟮 - 𝗥𝗲𝗟𝗨: Calculate `∂L / ∂z2` by multiplying `∂L / ∂a2` with `1` for positive values and `0` otherwise.
  7. 𝗟𝗮𝘆𝗲𝗿 𝟮 - 𝗪𝗲𝗶𝗴𝗵𝘁𝘀 & 𝗕𝗶𝗮𝘀𝗲𝘀: Calculate `∂L / ∂W2` and `∂L / ∂b2` by multiplying `∂L / ∂z2` and `[ a1 | 1 ]`.
  8. 𝗟𝗮𝘆𝗲𝗿 𝟭 - 𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗶𝗼𝗻𝘀: Calculate `∂L / ∂a1` by multiplying `∂L / ∂z2` and `W2`.
- 9. 𝗟𝗮𝘆𝗲𝗿 𝟭 - 𝗥𝗲𝗟𝗨 (blue): Calculate `∂L / ∂z1` by multiplying `∂L / ∂a1` with `1` for positive values and `0` otherwise.
+ 9. 𝗟𝗮𝘆𝗲𝗿 𝟭 - 𝗥𝗲𝗟𝗨: Calculate `∂L / ∂z1` by multiplying `∂L / ∂a1` with `1` for positive values and `0` otherwise.
 10. 𝗟𝗮𝘆𝗲𝗿 𝟭 - 𝗪𝗲𝗶𝗴𝗵𝘁𝘀 & 𝗕𝗶𝗮𝘀𝗲𝘀: Calculate `∂L / ∂W1` and `∂L / ∂b1` by multiplying `∂L / ∂z1` and `[ x | 1 ]`.
 11. 𝗚𝗿𝗮𝗱𝗶𝗲𝗻𝘁 𝗗𝗲𝘀𝗰𝗲𝗻𝘁: Update weights and biases (typically a learning rate is applied here).
 

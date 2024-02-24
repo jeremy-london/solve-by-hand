@@ -92,3 +92,23 @@ In this exercise, we explore the workings of a Generative Adversarial Network (G
   - Adversarial Training: A competitive process where the generator and discriminator improve through competition.
 
 Code: [generative_adversarial_network.py](./generative_adversarial_network.py)
+
+## Exercise 5
+
+### [Switch Transformer and Sparse Mixture of Experts](https://www.linkedin.com/posts/tom-yeh_gemini-transformer-deeplearning-activity-7167154366821380096-e2YQ)
+
+This exercise explores the Switch Transformer model, incorporating a Sparse Mixture of Experts (MoE) to handle large-scale models efficiently. The Switch Transformer extends traditional transformer models by routing input features to the most relevant expert, reducing computational load and allowing the model to scale to trillions of parameters.
+
+1. Given: Input features from the previous block `(X1-X5)`.
+2. Attention Pooling: Use an attention weight matrix `(A)` to pool features across positions, producing attention-weighted features `(Z1-Z5)`.
+3. Calculate Gate Values: Multiply pooled features by a switch matrix to calculate gate values for each expert.
+4. Route to Top Expert: Based on gate values, route each feature to the top expert, considering each expert's capacity.
+5. Process by Experts: Each expert processes routed features with a linear layer and bias, combining features vertically.
+6. Handle Capacity: If an expert's capacity is exceeded, the feature is passed through as is to the next block.
+
+- Key Concepts:
+  - Sparse Mixture of Experts (MoE): Allows the model to dynamically route inputs to the most relevant expert based on learned gate values.
+  - Efficiency and Scalability: By utilizing a sparse gating mechanism, the Switch Transformer can scale efficiently to handle trillions of parameters, surpassing the capabilities of traditional dense models.
+  - Expert Processing: Each expert specializes in processing certain types of input features, enhancing the model's overall performance and efficiency.
+
+Code: [switch_transformer.py](./switch_transformer.py)

@@ -60,3 +60,35 @@ This exercise demystifies the Transformer model, focusing on its core components
 > The Feed-Forward Network processes each position's features, adjusting dimensions and applying non-linear transformations.
 
 Code: [transformer.py](./transformer.py)
+
+## Exercise 4
+
+### [Generative Adversarial Network (GAN)](https://lnkd.in/gyKzNGDy)
+
+In this exercise, we explore the workings of a Generative Adversarial Network (GAN) by manually calculating the operations within both the generator and discriminator components. This exercise provides a fundamental understanding of GAN architecture and the interaction between its components to generate new data that mimics the distribution of real data.
+
+- Generator Architecture:
+  1. First Layer: Linear transformation from 2D noise to an intermediate feature space (3D).
+  2. ReLU Activation: Ensures non-linearity by setting negative values to zero.
+  3. Second Layer: Linear transformation from the intermediate feature space (3D) to the generated data space (4D).
+  4. ReLU Activation: Applied again to ensure non-linearity and positiveness in the generated data.
+
+- Discriminator Architecture:
+  1. First Layer: Linear transformation from the data space (4D) to an intermediate feature space (3D).
+  2. ReLU Activation: Ensures non-linearity by setting negative values to zero.
+  3. Second Layer: Linear transformation from the intermediate feature space (3D) to a single output (probability).
+  4. Sigmoid Activation: Converts the output to a probability value, indicating the likelihood of the input being real data.
+
+- Training Process:
+  1. The generator creates "fake" data from random noise.
+  2. The discriminator evaluates both real data and fake data from the generator.
+  3. Loss functions are calculated for both the generator and discriminator to update their weights, aiming to improve the generator's ability to create realistic data and the discriminator's ability to distinguish real from fake.
+
+- Objective:
+  The ultimate goal is to train the generator to produce data indistinguishable from real data, as judged by the discriminator.
+
+- Key Concepts:
+  - Generative Models: Learn to generate new data similar to the training set.
+  - Adversarial Training: A competitive process where the generator and discriminator improve through competition.
+
+Code: [generative_adversarial_network.py](./generative_adversarial_network.py)

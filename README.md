@@ -9,7 +9,7 @@ Below is a list included in this project with links to detailed explanations:
 - [Basics](./examples/basics/README.md)
 - [Networks](./examples/networks/README.md)
 - [Normalization and Regularization](./examples/normalization_and_regularization/README.md)
-- [Advanced Concepts & Experiments](./examples/advanced_concepts/README.md)
+- [Advanced Concepts & Experiments](./examples/advance_concepts/README.md)
 
 ## Getting Started
 

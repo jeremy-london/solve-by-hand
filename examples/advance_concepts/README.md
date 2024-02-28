@@ -110,4 +110,17 @@ Transformers revolutionized sequence modeling with their attention mechanisms, e
 
 Mamba S6 sets a new standard for sequence modeling, combining the efficiency of linear-time processing with the flexibility of dynamic weight selection, making it an innovative tool for a wide range of applications in AI and machine learning.
 
-Code File: [mamba_s6.py](./mamba_s6.py)
+Code: [mamba_s6.py](./mamba_s6.py)
+
+## Exercise 5: LLM Sampling
+
+In this exercise, we delve into the mechanics of sampling in Large Language Models (LLMs) using a hands-on approach to understand how each word in a sentence is drawn from a probability distribution.
+
+1. Input Embeddings: Begin with a sequence of input embeddings, each represented as a column vector.
+2. LLM Prediction: These embeddings are fed into an LLM, which predicts the probability distribution of the next word over a vocabulary.
+3. Cumulative Distribution: Manually calculate the cumulative distribution, starting at zero and adding each probability to the total as you move up the list up to 100.
+4. Random Sampling: Draw a random number from the embedded input `(e.g., 0.65)` and find where it falls within the cumulative distribution within the vocabulary representation.
+5. Word Selection: Select the word corresponding to this range `(e.g., "how 0.5")`.
+6. Repeat for Subsequent Words: Continue the process for the next output words, drawing new random numbers and selecting the appropriate words.
+
+Code: [llm_sampling.py](./llm_sampling.py)

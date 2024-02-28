@@ -1,0 +1,13 @@
+# linguist-detectable
+examples/**/*.py linguist-detectable
+examples/**/*.md linguist-detectable
+/.github/*.yml linguist-detectable
+/.github/workflows/*.yml linguist-detectable
+/*.md linguist-detectable
+
+# -liguist-documentatiom
+examples/**/*.py -linguist-documentation
+examples/**/*.md -linguist-documentation
+/.github/*.yml -linguist-documentation
+/.github/workflows/*.yml -linguist-documentation
+/*.md -linguist-documentation

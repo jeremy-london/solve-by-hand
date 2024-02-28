@@ -81,3 +81,33 @@ In this advanced exercise, we explore the Mixture of Experts (MoE) model, a powe
 6. Final Output with ReLU: The outputs from the experts for each token are then passed through a ReLU activation function to produce the final processed outputs.
 
 Code: [mixture_of_experts.py](./mixture_of_experts.py)
+
+## Exercise 4: Mamba S6 - Dynamic Sequence Modeling
+
+Mamba S6 introduces a novel approach to sequence modeling, advancing beyond traditional RNNs and Transformer architectures by leveraging a dynamic, structured state-space model. Developed by Albert Gu and Tri Dao, Mamba excels in processing complex sequences across diverse fields such as language processing, genomics, and audio analysis, showcasing exceptional efficiency and performance.
+
+### Overview of Mamba S6
+
+1. Dynamic Weight Application: Each step in the input sequence utilizes a unique set of weight parameters (A, B, C), enabling flexible adaptation to the sequence's context. This contrasts with conventional RNNs that typically reuse the same weights across all steps.
+
+2. Linear Processing without Non-linearity: Mamba S6 processes sequences through linear transformations, omitting non-linear activation functions. This design choice simplifies the computational model while still capturing the essential dynamics of the input sequence.
+
+3. Structured Matrices for State Transformation: The model uses structured matrices to update hidden states, starting with a specific structure that is dynamically adjusted in later operations. This allows for selective emphasis on certain aspects of the input data, enhancing the model's ability to process complex sequences.
+
+4. Selective State Spaces for Efficient Computation: Mamba's architecture, inspired by FlashAttention, incorporates selective state space layers that optimize computation and memory usage, particularly for long sequences.
+
+5. Superior Performance and Scalability: By addressing the computational challenges inherent in processing long sequences, Mamba achieves faster inference times and linear scaling with sequence length, outperforming Transformer-based models in efficiency and throughput.
+
+### Mamba vs Transformers
+
+Transformers revolutionized sequence modeling with their attention mechanisms, enabling parallel processing of sequences and capturing complex relationships within the data. However, they struggle with computational efficiency for long sequences. Mamba S6 addresses these limitations by using selective state spaces and structured transformations, offering a more computationally efficient model for long sequences without compromising on performance.
+
+### Unique Contributions of Mamba S6
+
+- Selective State-Space Modeling: Filters irrelevant information, focusing on relevant data for efficient sequence processing.
+- Hardware-aware Design: Optimizes computation for modern hardware, particularly GPUs, enhancing computational speed and reducing memory requirements.
+- Simplified Architecture: Eliminates traditional attention and MLP blocks, resulting in a lighter and faster model that scales linearly with sequence length.
+
+Mamba S6 sets a new standard for sequence modeling, combining the efficiency of linear-time processing with the flexibility of dynamic weight selection, making it an innovative tool for a wide range of applications in AI and machine learning.
+
+Code File: [mamba_s6.py](./mamba_s6.py)

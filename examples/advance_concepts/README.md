@@ -124,3 +124,39 @@ In this exercise, we delve into the mechanics of sampling in Large Language Mode
 6. Repeat for Subsequent Words: Continue the process for the next output words, drawing new random numbers and selecting the appropriate words.
 
 Code: [llm_sampling.py](./llm_sampling.py)
+
+## Exercise 6
+
+### [Reinforcement Learning from Human Feedback (RLHF)](https://www.linkedin.com/posts/tom-yeh_rlhf-reinforcementlearning-alignment-activity-7170458223341191168-V8Yl/)
+
+In this advanced exercise, we address the challenge of mitigating gender bias in Large Language Models (LLMs) using the technique of Reinforcement Learning from Human Feedback (RLHF). By incorporating human judgment into the learning process, we aim to align the LLM with ethical standards and broader human values.
+
+Through a series of steps, we train a Reward Model (RM) to prefer less biased language and then align the LLM to generate predictions that maximize the reward. This exercise simulates the RLHF process manually, providing a deeper understanding of the intricacies involved in fine-tuning LLMs.
+
+1. Training the Reward Model:
+   - Given two (Prompt, Next) pairs, a human picks a "winner" based on ethical standards.
+   - Calculate the reward for each pair through the RM, with higher rewards for less biased language.
+
+2. Aligning the LLM:
+   - Update the LLM's weights to generate text that maximizes the rewards from the RM.
+   - Use the RM to evaluate LLM-generated text and guide the LLM's learning process.
+
+3. Reward Model Walkthrough:
+   - Lookup word embeddings and process through a linear layer.
+   - Apply mean pooling to average features across positions, producing a sentence embedding.
+   - Use the output layer to generate a reward score for the LLM's output.
+
+4. Loss Gradient Calculation:
+   - Map the reward gap to a probability value as a prediction.
+   - Calculate the loss gradient by subtracting the target (ideal reward gap) from the prediction.
+   - Use backpropagation and gradient descent to update the RM's weights.
+
+5. LLM Alignment Procedure:
+   - Transform LLM prompt embeddings through attention and feed-forward mechanisms.
+   - Sample the next word using a greedy method based on output probabilities.
+   - Feed the generated text pair back to the RM for reward evaluation.
+   - Adjust LLM weights based on the loss gradient to align with human preferences.
+
+By the end of this exercise, participants will have simulated the process of using RLHF to mitigate gender bias in an LLM, exemplifying a foundational technique in ethical AI development.
+
+Code: [reinforcement_learning_with_human_feedback.py](./reinforcement_learning_with_human_feedback.py)

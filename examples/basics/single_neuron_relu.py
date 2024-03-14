@@ -1,5 +1,9 @@
 import numpy as np
 
+# Given values for single node network
+inputs = np.array([2, 1, 3])
+weights = np.array([1, -1, 1])
+bias = -5  # bias should be a scalar, not an array
 
 # Define the ReLU activation function for scalar inputs
 def relu(x):
@@ -27,11 +31,6 @@ def single_neuron_network(weights, bias, inputs):
     print(output_text)
     return output_before_activation, activated_output
 
-
-# Given values for single node network
-inputs = np.array([2, 1, 3])
-weights = np.array([1, -1, 1])
-bias = -5  # bias should be a scalar, not an array
 
 # Perform the operation
 output_before_activation, activated_output = single_neuron_network(

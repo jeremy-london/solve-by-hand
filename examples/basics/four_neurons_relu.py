@@ -1,5 +1,16 @@
 import numpy as np
 
+# Given values for the 4-neuron network
+weights = np.array(
+    [
+        [1, -1, 1],  # Neuron 1 weights
+        [1, 1, 0],  # Neuron 2 weights
+        [0, 1, 1],  # Neuron 3 weights
+        [1, 0, 1],  # Neuron 4 weights
+    ]
+)
+biases = np.array([-5, 0, 1, -2])
+inputs = np.array([2, 1, 3])
 
 # Define the ReLU activation function for array inputs
 def relu(x):
@@ -37,18 +48,6 @@ def four_neuron_network(weights, biases, inputs):
     print(output_text)
     return outputs_before_activation, activated_outputs, params_per_node, total_params
 
-
-# Given values for the 4-neuron network
-weights = np.array(
-    [
-        [1, -1, 1],  # Neuron 1 weights
-        [1, 1, 0],  # Neuron 2 weights
-        [0, 1, 1],  # Neuron 3 weights
-        [1, 0, 1],  # Neuron 4 weights
-    ]
-)
-biases = np.array([-5, 0, 1, -2])
-inputs = np.array([2, 1, 3])
 
 # Perform the operation
 outputs_before_activation, activated_outputs, params_per_node, total_params = (

@@ -1,51 +1,38 @@
 import numpy as np
 
+# Define the weight matrices for the hidden and output layers
+W1 = np.array([[1, -1, 1], [1, 1, 0], [0, 1, 1], [1, 0, 1]])
+b1 = np.array([-5, 0, 1, -2])  # Hidden layer biases
 
-# Define the ReLU activation function for array inputs
-def relu(x):
-    return np.maximum(0, x)
-
-
-# Function to compute the output of a two-layer network with ReLU activations
-def two_layer_network(W1, b1, W2, b2, x):
-    # First layer operation: Hidden Layer
-    h = relu(np.dot(W1, x) + b1)
-
-    # Second layer operation: Output Layer
-    y = relu(np.dot(W2, h) + b2)
-
-    return h, y
-
-
-# Given values for the two-layer network
-W1 = np.array(
-    [
-        [1, -1, 1],  # Hidden Neuron 1 weights
-        [1, 1, 0],  # Hidden Neuron 2 weights
-        [0, 1, 1],  # Hidden Neuron 3 weights
-        [1, 0, 1],  # Hidden Neuron 4 weights
-    ]
-)
-b1 = np.array([-5, 0, 1, -2])  # Biases for the hidden layer
-
-W2 = np.array(
-    [[1, 1, -1, 0], [0, 0, 1, -1]]  # Output Neuron 1 weights  # Output Neuron 2 weights
-)
-b2 = np.array([0, 1])  # Biases for the output layer
+W2 = np.array([[1, 1, -1, 0], [0, 0, 1, -1]])  # Output layer weights
+b2 = np.array([0, 1])  # Output layer biases
 
 x = np.array([2, 1, 3])  # Input vector
 
-# Perform the network operation
-h, y = two_layer_network(W1, b1, W2, b2, x)
+# Calculate the hidden layer's output before activation
+h_z = np.dot(W1, x) + b1
+# Apply ReLU activation to the hidden layer's output
+h = np.maximum(0, h_z)
 
-# Calculate the parameters count
-hidden_params = W1.shape[0] * (W1.shape[1] + 1)
-output_params = W2.shape[0] * (W2.shape[1] + 1)
-total_params = hidden_params + output_params
+# Display the hidden layer's computation before and after ReLU activation
+print("Hidden layer: (W1 * x + b1 → h_z):\n", h_z)
+print("ReLU Activated Hidden layer: (W1 * x + b1 → ReLU → h):\n", h)
 
-# Print the outcomes and parameter count
-print("Hidden layer: (W1 * x + b1 → ReLU → h):\n", h)
-print("Output Layer: (W2 * h + b2 → ReLU → y):\n", y)
+# Compute the output layer's result before activation
+y_z = np.dot(W2, h) + b2
+# Apply ReLU activation to the output layer's result
+y = np.maximum(0, y_z)
+
+# Display the output layer's computation before and after ReLU activation
+print("Output Layer: (W2 * h + b2 → y_z):\n", y_z)
+print("ReLU Activated Output Layer: (W2 * h + b2 → ReLU → y):\n", y)
+
+# Calculate the total number of parameters in the network
+hidden_params = W1.shape[0] * (W1.shape[1] + 1)  # Parameters in the hidden layer
+output_params = W2.shape[0] * (W2.shape[1] + 1)  # Parameters in the output layer
+total_params = hidden_params + output_params  # Sum of all parameters
+
+# Print the total parameter count for the network
 print(
     "Total parameters in the network (hidden_params + output_params):\n",
     f"{hidden_params} + {output_params} = {total_params}",

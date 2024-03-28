@@ -7,8 +7,15 @@ b1 = np.array([-5, 0, 1, -2])  # Biases for the hidden layer
 W2 = np.array([[1, 1, -1, 0], [0, 0, 1, -1]])
 b2 = np.array([0, 1])  # Biases for the output layer
 
-# Define input batch
-x_batch = np.array([[2, 1, 0], [1, 1, 1], [3, 0, 1]])
+# Define individual input vectors as column vectors
+x1 = np.array([[2], [1], [3]])
+x2 = np.array([[1], [1], [0]])
+x3 = np.array([[0], [1], [1]])
+
+# Combine input vectors into a single batch using hstack
+x_batch = np.hstack((x1, x2, x3))
+print("Input batch:\n", x_batch)
+
 
 # Calculate the hidden layer's output before activation
 h_z = np.dot(W1, x_batch) + b1.reshape(-1, 1)

@@ -1,6 +1,13 @@
 import numpy as np
 
-# Given values for the two-layer network
+x_batch = np.array(
+    [
+        [3, 5],  # Input features for x1
+        [4, 4],  # Input features for x2
+        [5, 3],  # Input features for x3
+    ]
+)
+
 W1 = np.array([
     [0, 0, 1],  # Hidden Neuron 1 weights
     [0, 1, 0],  # Hidden Neuron 2 weights
@@ -39,17 +46,8 @@ W7 = np.array([
     [1, -1],  # Output Neuron 1 weights
 ])
 
-x_batch = np.array([
-    [3, 5],  # Input features for x1
-    [4, 4],  # Input features for x2
-    [5, 3]  # Input features for x3
-])
-
-
-# Define the ReLU activation function for array inputs
 def relu(x):
     return np.maximum(0, x)
-
 
 # Multi-layer perceptron function
 def multi_layer_perceptron(W1, W2, W3, W4, W5, W6, W7, x_batch):
@@ -89,7 +87,6 @@ def multi_layer_perceptron(W1, W2, W3, W4, W5, W6, W7, x_batch):
         h6_after_activation,
         y_before_activation,
     )
-
 
 # Call the multi-layer perceptron function
 results = multi_layer_perceptron(W1, W2, W3, W4, W5, W6, W7, x_batch)

@@ -51,39 +51,33 @@ def relu(x):
 # Multi-layer perceptron function
 def multi_layer_perceptron(W1, W2, W3, W4, W5, W6, W7, x_batch):
     # Layer 1
-    h1_before_activation = np.dot(W1, x_batch)
-    h1_after_activation = relu(h1_before_activation)
+    h1_activation = relu(np.dot(W1, x_batch))
 
     # Layer 2
-    h2_before_activation = np.dot(W2, h1_after_activation)
-    h2_after_activation = relu(h2_before_activation)
+    h2_activation = relu(np.dot(W2, h1_activation))
 
     # Layer 3
-    h3_before_activation = np.dot(W3, h2_after_activation)
-    h3_after_activation = relu(h3_before_activation)
+    h3_activation = relu(np.dot(W3, h2_activation))
 
     # Layer 4
-    h4_before_activation = np.dot(W4, h3_after_activation)
-    h4_after_activation = relu(h4_before_activation)
+    h4_activation = relu(np.dot(W4, h3_activation))
 
     # Layer 5
-    h5_before_activation = np.dot(W5, h4_after_activation)
-    h5_after_activation = relu(h5_before_activation)
+    h5_activation = relu(np.dot(W5, h4_activation))
 
     # Layer 6
-    h6_before_activation = np.dot(W6, h5_after_activation)
-    h6_after_activation = relu(h6_before_activation)
+    h6_activation = relu(np.dot(W6, h5_activation))
 
     # Output layer
-    y_before_activation = np.dot(W7, h6_after_activation)
+    y_before_activation = np.dot(W7, h6_activation)
 
     return (
-        h1_after_activation,
-        h2_after_activation,
-        h3_after_activation,
-        h4_after_activation,
-        h5_after_activation,
-        h6_after_activation,
+        h1_activation,
+        h2_activation,
+        h3_activation,
+        h4_activation,
+        h5_activation,
+        h6_activation,
         y_before_activation,
     )
 

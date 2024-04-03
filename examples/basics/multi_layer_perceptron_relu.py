@@ -1,12 +1,11 @@
 import numpy as np
 
-x_batch = np.array(
-    [
-        [3, 5],  # Input features for x1
-        [4, 4],  # Input features for x2
-        [5, 3],  # Input features for x3
-    ]
-)
+# Define individual input vectors as column vectors
+x1 = np.array([[3], [4], [5]])
+x2 = np.array([[5], [4], [3]])
+
+# Combine input vectors into a single batch using hstack
+x_batch = np.hstack((x1, x2))
 
 W1 = np.array([
     [0, 0, 1],  # Hidden Neuron 1 weights

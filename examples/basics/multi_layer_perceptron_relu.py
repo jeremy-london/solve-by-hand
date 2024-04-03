@@ -74,4 +74,4 @@ results = multi_layer_perceptron(W1, W2, W3, W4, W5, W6, W7, x_batch)
 
 # Display the results
 for i, result in enumerate(results, start=1):
-  print(f"Layer {i} output:\n{result}\n")
+    print(f"Layer {i} output:\n{result}")

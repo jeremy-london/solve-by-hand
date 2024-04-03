@@ -4,7 +4,6 @@ import numpy as np
 x1 = np.array([[3], [4], [5]])
 x2 = np.array([[5], [4], [3]])
 
-# Combine input vectors into a single batch using hstack
 x_batch = np.hstack((x1, x2))
 
 W1 = np.array([
@@ -48,27 +47,15 @@ W7 = np.array([
 def relu(x):
     return np.maximum(0, x)
 
+
 # Multi-layer perceptron function
 def multi_layer_perceptron(W1, W2, W3, W4, W5, W6, W7, x_batch):
-    # Layer 1
     h1_activation = relu(np.dot(W1, x_batch))
-
-    # Layer 2
     h2_activation = relu(np.dot(W2, h1_activation))
-
-    # Layer 3
     h3_activation = relu(np.dot(W3, h2_activation))
-
-    # Layer 4
     h4_activation = relu(np.dot(W4, h3_activation))
-
-    # Layer 5
     h5_activation = relu(np.dot(W5, h4_activation))
-
-    # Layer 6
     h6_activation = relu(np.dot(W6, h5_activation))
-
-    # Output layer
     y_before_activation = np.dot(W7, h6_activation)
 
     return (
@@ -80,6 +67,7 @@ def multi_layer_perceptron(W1, W2, W3, W4, W5, W6, W7, x_batch):
         h6_activation,
         y_before_activation,
     )
+
 
 # Call the multi-layer perceptron function
 results = multi_layer_perceptron(W1, W2, W3, W4, W5, W6, W7, x_batch)

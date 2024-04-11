@@ -1,15 +1,12 @@
 import numpy as np
 
-
 # Activation function: Rectified Linear Unit (ReLU)
 def relu(x):
     return np.maximum(0, x)
 
-
 # Derivative of the ReLU function
 def relu_derivative(x):
     return (x > 0).astype(x.dtype)
-
 
 # Input vector
 X = np.array([[2], [1], [3]])

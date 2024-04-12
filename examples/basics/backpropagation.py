@@ -74,13 +74,18 @@ dL_dW1 = np.dot(X, dL_dz1.reshape(1, -1))
 
 # Print the gradients for each layer to verify the backpropagation process
 print("Layer 3 gradients:")
+print(" dL/dz3:\n", dL_dz3)
 print(" dL/db3:\n", dL_db3)
 print(" dL/dW3:\n", dL_dW3.T)
 
 print("Layer 2 gradients:")
+print(" dL/dz2:\n", dL_dz2)
+print(" dL/da2:\n", dL_da2)
 print(" dL/db2:\n", dL_db2)
 print(" dL/dW2:\n", dL_dW2.T)
 
 print("Layer 1 gradients:")
+print(" dL/dz1:\n", dL_dz1)
+print(" dL/da1:\n", dL_da1)
 print(" dL/db1:\n", dL_db1)
 print(" dL/dW1:\n", dL_dW1)
